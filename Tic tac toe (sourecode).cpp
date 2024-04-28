@@ -14,7 +14,7 @@ public:
         clearBoard();
     }
     // Ham bo tro thiet ke va quan ly su thay doi cua gameplay
-    // Ham clearBoard su dung de xoa noi dung cua bang choi bang cach gan moi o cua bang thanh dau gach ngang (ì-î). 
+    // Ham clearBoard su dung de xoa noi dung cua bang choi bang cach gan moi o cua bang thanh dau gach ngang (‚Äú-‚Äù). 
     void clearBoard() {
         for (int i = 0; i < 3; ++i) {
             for (int j = 0; j < 3; ++j) {
@@ -239,7 +239,7 @@ int main() {
                 break;
             case 5:{
             	Set_background_color(7);
-				cout << "===============The game created by===============" << endl;
+		cout << "===============The game created by===============" << endl;
             	cout << "||               Nhom 6 Studio                 ||" << endl;
             	cout << "||        Contact for more information         ||" << endl;
             	cout << "=================================================" << endl;
