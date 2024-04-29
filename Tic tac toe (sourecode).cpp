@@ -24,15 +24,30 @@ public:
     }
     // Ham printBoard su dung de in ra noi dung cua bang choi, hien thi bang duoi dang ma tran 3x3 voi cac dau gach ngang va cac ky tu (X, O hoac -) tuong ung
     void printBoard() {
-    	cout << "-------------" << endl;
+    	Set_colorBoard(4);
+		cout << "X ";
+    	Set_colorBoard(2);
+    	cout << "===========================================";
+    	Set_colorBoard(4);
+		cout << " X";
+		cout << endl;
+		Set_colorBoard(7);
+    	cout << "  -------------------------------------------" << endl;
     	for (int i = 0; i < 3; ++i) {
-        	cout << "| ";
+        	cout << "  | ";
         	for (int j = 0; j < 3; ++j) {
-            	cout << arr[i][j] << " | ";
+            	cout << arr[i][j] << "           | ";
         	}
         	cout << endl;
-        	cout << "-------------" << endl;
+        	cout << "  -------------------------------------------" << endl;
     	}
+    	Set_colorBoard(4);
+		cout << "O ";
+    	Set_colorBoard(2);
+    	cout << "===========================================";
+		Set_colorBoard(4);
+		cout << " O" ;
+		cout << endl;
 	}
 	//Ham placeMarker duoc su dung de dat mot ky tu (danh dau) vao o cua bang voi vi tri duoc chi dinh boi hang row va cot col
     bool placeMarker(int row, int col, char marker) {
@@ -73,6 +88,10 @@ public:
         }
         return true;
     }
+    void Set_colorBoard(int color) {
+   		HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
+    	SetConsoleTextAttribute(hConsole, color);
+	}
 };
 // Xay dung class Player de xac dinh nguoi choi la human hoac bot
 class Player {
@@ -208,6 +227,193 @@ void showIntrodaugame() {
     cout << "============================================================" << endl;
     cout << endl;
 }
+void showOutro0() {
+	Set_background_color(0);
+	clearScreen();
+    Set_color(2);
+    cout << "================== [X] Tic Tac Toe [O] =====================" << endl;
+    Set_color(3);
+    cout << "||                                                        ||" << endl;
+    cout << "||                   Quitting game.                       ||" << endl;
+    cout << "||          ______________________________________        ||" << endl;
+    cout << "||        |                                      | 0%     ||" << endl;
+    cout << "||          --------------------------------------        ||" << endl;
+    cout << "||                                                        ||" << endl;
+    cout << "||                                                        ||" << endl;
+    Set_color(2);
+    cout << "============================================================" << endl;
+    cout << endl;
+}
+void showOutro10() {
+	Set_background_color(0);
+	clearScreen();
+    Set_color(2);
+    cout << "================== [X] Tic Tac Toe [O] =====================" << endl;
+    Set_color(3);
+    cout << "||                                                        ||" << endl;
+    cout << "||                   Quitting game..                      ||" << endl;
+    cout << "||          ______________________________________        ||" << endl;
+    cout << "||        |====                                  | 10%    ||" << endl;
+    cout << "||          --------------------------------------        ||" << endl;
+    cout << "||                                                        ||" << endl;
+    cout << "||                                                        ||" << endl;
+    Set_color(2);
+    cout << "============================================================" << endl;
+    cout << endl;
+}
+void showOutro20() {
+	Set_background_color(0);
+	clearScreen();
+    Set_color(2);
+    cout << "================== [X] Tic Tac Toe [O] =====================" << endl;
+    Set_color(3);
+    cout << "||                                                        ||" << endl;
+    cout << "||                   Quitting game...                     ||" << endl;
+    cout << "||          ______________________________________        ||" << endl;
+    cout << "||        |=========                             | 20%    ||" << endl;
+    cout << "||          --------------------------------------        ||" << endl;
+    cout << "||                                                        ||" << endl;
+    cout << "||                                                        ||" << endl;
+    Set_color(2);
+    cout << "============================================================" << endl;
+    cout << endl;
+}
+void showOutro30() {
+	Set_background_color(0);
+	clearScreen();
+    Set_color(2);
+    cout << "================== [X] Tic Tac Toe [O] =====================" << endl;
+    Set_color(3);
+    cout << "||                                                        ||" << endl;
+    cout << "||                   Quitting game                        ||" << endl;
+    cout << "||          ______________________________________        ||" << endl;
+    cout << "||        |===============                       | 30%    ||" << endl;
+    cout << "||          --------------------------------------        ||" << endl;
+    cout << "||                                                        ||" << endl;
+    cout << "||                                                        ||" << endl;
+    Set_color(2);
+    cout << "============================================================" << endl;
+    cout << endl;
+}
+void showOutro40() {
+	Set_background_color(0);
+	clearScreen();
+    Set_color(2);
+    cout << "================== [X] Tic Tac Toe [O] =====================" << endl;
+    Set_color(3);
+    cout << "||                                                        ||" << endl;
+    cout << "||                   Quitting game.                       ||" << endl;
+    cout << "||          ______________________________________        ||" << endl;
+    cout << "||        |==================                    | 40%    ||" << endl;
+    cout << "||          --------------------------------------        ||" << endl;
+    cout << "||                                                        ||" << endl;
+    cout << "||                                                        ||" << endl;
+    Set_color(2);
+    cout << "============================================================" << endl;
+    cout << endl;
+}
+void showOutro50() {
+	Set_background_color(0);
+	clearScreen();
+    Set_color(2);
+    cout << "================== [X] Tic Tac Toe [O] =====================" << endl;
+    Set_color(3);
+    cout << "||                                                        ||" << endl;
+    cout << "||                   Quitting game..                      ||" << endl;
+    cout << "||          ______________________________________        ||" << endl;
+    cout << "||        |====================                  | 50%    ||" << endl;
+    cout << "||          --------------------------------------        ||" << endl;
+    cout << "||                                                        ||" << endl;
+    cout << "||                                                        ||" << endl;
+    Set_color(2);
+    cout << "============================================================" << endl;
+    cout << endl;
+}
+void showOutro60() {
+	Set_background_color(0);
+	clearScreen();
+    Set_color(2);
+    cout << "================== [X] Tic Tac Toe [O] =====================" << endl;
+    Set_color(3);
+    cout << "||                                                        ||" << endl;
+    cout << "||                   Quitting game...                     ||" << endl;
+    cout << "||          ______________________________________        ||" << endl;
+    cout << "||        |=========================             | 60%    ||" << endl;
+    cout << "||          --------------------------------------        ||" << endl;
+    cout << "||                                                        ||" << endl;
+    cout << "||                                                        ||" << endl;
+    Set_color(2);
+    cout << "============================================================" << endl;
+    cout << endl;
+}
+void showOutro70() {
+	Set_background_color(0);
+	clearScreen();
+    Set_color(2);
+    cout << "================== [X] Tic Tac Toe [O] =====================" << endl;
+    Set_color(3);
+    cout << "||                                                        ||" << endl;
+    cout << "||                   Quitting game                        ||" << endl;
+    cout << "||          ______________________________________        ||" << endl;
+    cout << "||        |==============================        | 70%    ||" << endl;
+    cout << "||          --------------------------------------        ||" << endl;
+    cout << "||                                                        ||" << endl;
+    cout << "||                                                        ||" << endl;
+    Set_color(2);
+    cout << "============================================================" << endl;
+    cout << endl;
+}
+void showOutro80() {
+	Set_background_color(0);
+	clearScreen();
+    Set_color(2);
+    cout << "================== [X] Tic Tac Toe [O] =====================" << endl;
+    Set_color(3);
+    cout << "||                                                        ||" << endl;
+    cout << "||                   Quitting game.                       ||" << endl;
+    cout << "||          ______________________________________        ||" << endl;
+    cout << "||        |==================================    | 80%    ||" << endl;
+    cout << "||          --------------------------------------        ||" << endl;
+    cout << "||                                                        ||" << endl;
+    cout << "||                                                        ||" << endl;
+    Set_color(2);
+    cout << "============================================================" << endl;
+    cout << endl;
+}
+void showOutro95() {
+	Set_background_color(0);
+	clearScreen();
+    Set_color(2);
+    cout << "================== [X] Tic Tac Toe [O] =====================" << endl;
+    Set_color(3);
+    cout << "||                                                        ||" << endl;
+    cout << "||                   Quitting game..                      ||" << endl;
+    cout << "||          ______________________________________        ||" << endl;
+    cout << "||        |====================================  | 95%    ||" << endl;
+    cout << "||          --------------------------------------        ||" << endl;
+    cout << "||                                                        ||" << endl;
+    cout << "||                                                        ||" << endl;
+    Set_color(2);
+    cout << "============================================================" << endl;
+    cout << endl;
+}
+void showOutro100() {
+	Set_background_color(0);
+	clearScreen();
+    Set_color(2);
+    cout << "================== [X] Tic Tac Toe [O] =====================" << endl;
+    Set_color(3);
+    cout << "||                                                        ||" << endl;
+    cout << "||                   Quitting game...                     ||" << endl;
+    cout << "||          ______________________________________        ||" << endl;
+    cout << "||        |======================================| 100%   ||" << endl;
+    cout << "||          --------------------------------------        ||" << endl;
+    cout << "||                                                        ||" << endl;
+    cout << "||                                                        ||" << endl;
+    Set_color(2);
+    cout << "============================================================" << endl;
+    cout << endl;
+}
 void showIntro0() {
 	Set_background_color(0);
 	clearScreen();
@@ -300,7 +506,7 @@ void showIntro50() {
     cout << "================== [X] Tic Tac Toe [O] =====================" << endl;
     Set_color(3);
     cout << "||                                                        ||" << endl;
-    cout << "||                Get ready for some fun!                 ||" << endl;
+    cout << "||            Note: Careful to tick the board :v          ||" << endl;
     cout << "||          ______________________________________        ||" << endl;
     cout << "||        |====================                  | 50%    ||" << endl;
     cout << "||          --------------------------------------        ||" << endl;
@@ -317,7 +523,7 @@ void showIntro60() {
     cout << "================== [X] Tic Tac Toe [O] =====================" << endl;
     Set_color(3);
     cout << "||                                                        ||" << endl;
-    cout << "||                Get ready for some fun!                 ||" << endl;
+    cout << "||            Note: Careful to tick the board :v          ||" << endl;
     cout << "||          ______________________________________        ||" << endl;
     cout << "||        |=========================             | 60%    ||" << endl;
     cout << "||          --------------------------------------        ||" << endl;
@@ -334,7 +540,7 @@ void showIntro70() {
     cout << "================== [X] Tic Tac Toe [O] =====================" << endl;
     Set_color(3);
     cout << "||                                                        ||" << endl;
-    cout << "||                Get ready for some fun!                 ||" << endl;
+    cout << "||            Note: Careful to tick the board :v          ||" << endl;
     cout << "||          ______________________________________        ||" << endl;
     cout << "||        |==============================        | 70%    ||" << endl;
     cout << "||          --------------------------------------        ||" << endl;
@@ -351,7 +557,7 @@ void showIntro80() {
     cout << "================== [X] Tic Tac Toe [O] =====================" << endl;
     Set_color(3);
     cout << "||                                                        ||" << endl;
-    cout << "||                Get ready for some fun!                 ||" << endl;
+    cout << "||            Note: Careful to tick the board :v          ||" << endl;
     cout << "||          ______________________________________        ||" << endl;
     cout << "||        |==================================    | 80%    ||" << endl;
     cout << "||          --------------------------------------        ||" << endl;
@@ -368,7 +574,7 @@ void showIntro95() {
     cout << "================== [X] Tic Tac Toe [O] =====================" << endl;
     Set_color(3);
     cout << "||                                                        ||" << endl;
-    cout << "||                Get ready for some fun!                 ||" << endl;
+    cout << "||            Note: Careful to tick the board :v          ||" << endl;
     cout << "||          ______________________________________        ||" << endl;
     cout << "||        |====================================  | 95%    ||" << endl;
     cout << "||          --------------------------------------        ||" << endl;
@@ -385,7 +591,7 @@ void showIntro100() {
     cout << "================== [X] Tic Tac Toe [O] =====================" << endl;
     Set_color(3);
     cout << "||                                                        ||" << endl;
-    cout << "||                Get ready for some fun!                 ||" << endl;
+    cout << "||            Note: Careful to tick the board :v          ||" << endl;
     cout << "||          ______________________________________        ||" << endl;
     cout << "||        |======================================| 100%   ||" << endl;
     cout << "||          --------------------------------------        ||" << endl;
@@ -415,7 +621,7 @@ void Menu() {
 
 int main() {
     srand(time(NULL));
-    int choice; // tao ra bien de lua chon cac muc trong menu gameplay
+    char choice; // tao ra bien de lua chon cac muc trong menu gameplay
     showIntrodaugame();
     Sleep(1000);
     showIntro0();
@@ -448,7 +654,7 @@ int main() {
         cout << "Enter your choice: ";
         cin >> choice;
         switch (choice) {
-            case 1: {
+            case '1': {
             	Set_color(4);
             	cout << "Human vs Computer"<< endl;
             	Set_color(7);
@@ -476,6 +682,7 @@ int main() {
 					} 
 				}
             	if (mark1 == 'X' && mark2 == 'O'){
+            		Set_color(2);
             		HumanPlayer player1('X');
                 	ComputerPlayer player2('O');
                 	Game game(&player1, &player2);
@@ -488,7 +695,7 @@ int main() {
 				} 
                 break;
             }
-            case 2: {
+            case '2': {
             	Set_color(4);
             	cout << "Human1 vs Human2"<< endl;
             	Set_color(7);
@@ -528,7 +735,7 @@ int main() {
 				} 
                 break;
             }
-            case 3:{
+            case '3':{
             	Set_color(4);
             	cout << "Computer1 vs Computer2" << endl;
             	Set_color(7);
@@ -568,7 +775,7 @@ int main() {
 				} 
 				break;
 			}
-            case 4:
+            case '4':
             	Set_color(2);
                 cout << "===============How to play===============" << endl;
                 Set_color(3);
@@ -580,7 +787,7 @@ int main() {
             	cout << "=========================================" << endl;
             	cout << endl;
                 break;
-            case 5:{
+            case '5':{
             	Set_color(2);
 				cout << "===============The game created by===============" << endl;
 				Set_color(3);
@@ -592,12 +799,35 @@ int main() {
             	cout << endl;
             	break;
 			}
-            case 6:{
+            case '6':{
+            	showOutro0();
+    			Sleep(50);
+    			showOutro10();
+    			Sleep(50);
+    			showOutro20();
+    			Sleep(50);
+    			showOutro30();
+    			Sleep(50);
+    			showOutro40();
+    			Sleep(50);
+    			showOutro50();
+    			Sleep(50);
+    			showOutro60();
+    			Sleep(1000);
+    			showOutro70();
+    			Sleep(50);
+    			showOutro80();
+    			Sleep(30);
+    			showOutro95();
+    			Sleep(1000);
+    			showOutro100();
+    			Sleep(30);
+    			clearScreen();
 				Set_color(2);
             	cout << "============================================" << endl;
             	Set_color(3);
-            	cout << "||             Exiting game...            ||" << endl;
-                cout << "||    Thank you for enjoying our game!!   ||" << endl;
+            	cout << "||        Exited game successfully!       ||" << endl;
+                cout << "||    Thank you for enjoying our game^^   ||" << endl;
                 Set_color(2);
                 cout << "============================================" << endl;
                 return 0;
@@ -605,7 +835,7 @@ int main() {
 			}
             default:
             	Set_color(4);
-                cout << "Invalid choice. Please try again." << endl;
+            	cout << "Invalid choice. Please try again." << endl;
                 break;
         }
     }
