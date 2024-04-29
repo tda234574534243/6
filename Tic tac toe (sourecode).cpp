@@ -91,12 +91,14 @@ public:
     // Ham bo tro
     //  Ham makeMove yeu cau nguoi choi con nguoi nhap hang va cot de danh dau tren bang. No kiem tra tinh hop le cua nuoc di va neu khong hop le, no se nem mot ngoai le (exception). 
     void makeMove(Board& board) override { 
-        int row, col;
-        cout << "Enter your move (row and column, (x <= 3, y <= 3)): ";
-        cin >> row >> col;
-        if (row < 1 || row > 3 || col < 1 || col > 3 || !board.placeMarker(row - 1, col - 1, marker)) {
-            throw invalid_argument("INVALID MOVE!");
-        }
+        cout << "Enter your move (1 -> 9): ";
+        int pos;
+        cin >> pos;
+        int row = (pos - 1) / 3;
+    	int col = (pos - 1) % 3;
+        if (pos < 1 || pos > 9 || !board.placeMarker(row, col, marker)) {
+        	throw invalid_argument("INVALID MOVE!");
+    	}
     }
 };
 //***Xay dung class ComputerPlayer ke thua tu lop Player***//
@@ -158,6 +160,7 @@ public:
                 board.printBoard();
                 break;
             } else if (board.full()) {
+            	Set_colorGame(6);
                 cout << "TIE!" << endl;
                 board.printBoard(); 
                 break;
@@ -167,7 +170,7 @@ public:
         }
     }
     // xay dung color chu trong class Game
-     void Set_colorGame(int color) {
+    void Set_colorGame(int color) {
     	HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
     	SetConsoleTextAttribute(hConsole, color);
 	}
@@ -569,8 +572,8 @@ int main() {
             	Set_color(2);
                 cout << "===============How to play===============" << endl;
                 Set_color(3);
-            	cout << "||    *Type (x(row), y(col)) to tick   ||" << endl;
-            	cout << "||      the box on the board game      ||" << endl;
+            	cout << "||    *Type 1 -> 9 to tick the box     ||" << endl;
+            	cout << "||          on the board game          ||" << endl;
             	cout << "||    *The winner is the one who gets  ||" << endl;
             	cout << "||   three X's in a row in Tic Tac Toe ||" << endl;
             	Set_color(2);
