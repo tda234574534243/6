@@ -3,7 +3,7 @@
 #include <cstdlib> //thu vien ho tro tao ra cac thanh phan an phim (toa do) de thao tac khi choi
 #include <ctime> // thu vien ho tro tao ra cac buoc di ngau nhien cua computer
 #include <windows.h> // thu vien ho tro color
-
+#include <bits/stdc++.h> // thu vien cung cap cac thu vien string phuc vu cho chuc nang duyet xau cua chuong trinh
 using namespace std;
 // Xay dung class Board de thiet ke khung gameplay cua tro choi
 class Board {
@@ -108,15 +108,28 @@ public:
 	// Khoi tao
     HumanPlayer(char m) : Player(m) {}
     // Ham bo tro
-    //  Ham makeMove yeu cau nguoi choi con nguoi nhap hang va cot de danh dau tren bang. No kiem tra tinh hop le cua nuoc di va neu khong hop le, no se nem mot ngoai le (exception). 
+    //  Ham makeMove yeu cau nguoi choi con nguoi nhap 1-9 de danh dau tren bang. No kiem tra tinh hop le cua nuoc di va neu khong hop le, no se nem mot ngoai le (exception). 
     void makeMove(Board& board) override { 
-        cout << "Enter your move (1 -> 9): ";
         int pos;
-        cin >> pos;
+        while (true) {
+        cout << "Enter your move (1 -> 9): ";
+        if (!(cin >> pos)) { 
+            cin.clear(); 
+            cin.ignore(numeric_limits<streamsize>::max(), '\n'); 
+            cout << "Invalid input. Please enter a number." << endl;
+            continue; 
+        }
+        if (pos < 1 || pos > 9) { 
+            cout << "Invalid move. Please enter a number from 1 to 9." << endl;
+            continue; 
+        }
         int row = (pos - 1) / 3;
-    	int col = (pos - 1) % 3;
-        if (pos < 1 || pos > 9 || !board.placeMarker(row, col, marker)) {
-        	throw invalid_argument("INVALID MOVE!");
+        int col = (pos - 1) % 3;
+        if (!board.placeMarker(row, col, marker)) { 
+          	cout << "This position is already taken. Please choose another one." << endl;
+            continue; 
+        }
+        	break; 
     	}
     }
 };
@@ -126,7 +139,8 @@ public:
 	// Khoi tao
     ComputerPlayer(char m) : Player(m) {}
     // Ham bo tro
-    // Ham makeMove tao ra mot nuoc di ngau nhien cho nguoi choi may tinh bang cach chon mot hang va cot ngau nhien tren bang va dat ky tu vao o do. Neu o da duoc danh dau, no se chon mot o khac. 
+    // Ham makeMove tao ra mot nuoc di ngau nhien cho nguoi choi may tinh bang cach chon mot hang va cot ngau nhien tren bang va dat ky tu vao o do. Neu o da duoc danh dau, no se chon mot o khac.
+	 
     void makeMove(Board& board) override {
         int row, col;
         do {
@@ -140,7 +154,8 @@ class Game {
     Board board;
     Player* player1;
     Player* player2;
-    
+    // ham bo tro 
+    // tinh turn player1 va player2
     void switchPlayers(Player*& current) {
         if (current == player1) {
             current = player2;
@@ -153,7 +168,7 @@ public:
 	// Khoi tao
     Game(Player* p1, Player* p2) : player1(p1), player2(p2) {}
 	// Ham bo tro
-	// Ham play dieu khien luong choi cua tro choi Tic Tac Toe. No lap lai cac luot choi cho den khi co mot nguoi chien thang hoac o trong day. 
+	// Ham play dieu khien luong choi cua tro choi Tic Tac Toe. Lap lai cac luot choi cho den khi co mot nguoi chien thang hoac full o. 
     void play() {
         Player* current = player1;
         while (1) {
@@ -623,7 +638,7 @@ int main() {
     srand(time(NULL));
     char choice; // tao ra bien de lua chon cac muc trong menu gameplay
     showIntrodaugame();
-    Sleep(1000);
+    Sleep(10000);
     showIntro0();
     Sleep(50);
     showIntro10();
