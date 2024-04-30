@@ -638,7 +638,7 @@ int main() {
     srand(time(NULL));
     char choice; // tao ra bien de lua chon cac muc trong menu gameplay
     showIntrodaugame();
-    Sleep(10000);
+    Sleep(1000);
     showIntro0();
     Sleep(50);
     showIntro10();
